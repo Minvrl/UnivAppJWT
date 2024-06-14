@@ -23,35 +23,35 @@ namespace Univ.API.Controllers
             _userManager = userManager;
         }
 
-        [HttpGet("users")]
-        public async Task<IActionResult> CreateUser()
-        {
+        //[HttpGet("users")]
+        //public async Task<IActionResult> CreateUser()
+        //{
 
-            await _roleManager.CreateAsync(new IdentityRole("Admin"));
-            await _roleManager.CreateAsync(new IdentityRole("Member"));
+        //    await _roleManager.CreateAsync(new IdentityRole("Admin"));
+        //    await _roleManager.CreateAsync(new IdentityRole("Member"));
 
 
-            AppUser admin = new AppUser
-            {
-                Fullname = "Admin",
-                UserName = "admin",
-            };
+        //    AppUser admin = new AppUser
+        //    {
+        //        Fullname = "Admin",
+        //        UserName = "admin",
+        //    };
 
-            await _userManager.CreateAsync(admin, "Admin123");
+        //    await _userManager.CreateAsync(admin, "Admin123");
 
-            AppUser member = new AppUser
-            {
-                Fullname = "Member1",
-                UserName = "member1",
-            };
+        //    AppUser member = new AppUser
+        //    {
+        //        Fullname = "Member1",
+        //        UserName = "member1",
+        //    };
 
-            await _userManager.CreateAsync(member, "Member123");
+        //    await _userManager.CreateAsync(member, "Member123");
 
-            await _userManager.AddToRoleAsync(admin, "Admin");
-            await _userManager.AddToRoleAsync(member, "Member");
+        //    await _userManager.AddToRoleAsync(admin, "Admin");
+        //    await _userManager.AddToRoleAsync(member, "Member");
 
-            return Ok(admin.Id);
-        }
+        //    return Ok(admin.Id);
+        //}
 
 
         [HttpPost("login")]
